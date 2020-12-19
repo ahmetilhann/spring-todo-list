@@ -18,6 +18,7 @@
             <tr>
                 <th>Title</th>
                 <th>Detail</th>
+                <th>Edit</th>
                 <th>Delete</th>
             </tr>
 
@@ -25,9 +26,13 @@
                 <c:url var="deleteUrl" value="${Mappings.DELETE_ITEM}">
                     <c:param name="id" value="${item.id}" />
                 </c:url>
+                <c:url var="editUrl" value="${Mappings.ADD_ITEM}">
+                    <c:param name="id" value="${item.id}" />
+                </c:url>
                 <tr>
                     <td><c:out value="${item.title}" /></td>
                     <td><c:out value="${item.localDate}" /></td>
+                    <td><a href="${editUrl}">edit</a></td>
                     <td><a href="${deleteUrl}">delete</a></td>
                 </tr>
             </c:forEach>
